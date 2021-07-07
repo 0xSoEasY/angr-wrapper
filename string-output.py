@@ -1,6 +1,6 @@
 import angr
 
-proj = angr.Project('login')
+proj = angr.Project('./binaries/phack-login')
 simgr = proj.factory.simgr()
 simgr.explore(find=lambda s: b"[+] ACCESS GRANTED!" in s.posix.dumps(1))
 
