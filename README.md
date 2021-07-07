@@ -10,12 +10,12 @@ This script is the most basic one and will simply find the way to have the strin
 
 Then it will print the input given to the binary to have the specified string in the output.
 
+Example of execution :
 ```bash
 $ python3 string-output.py
 WARNING | 2021-07-07 13:38:55,158 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
 b'q4Eo-eyMq-1dd0-leKx\x0f`\x18"\x00IR\xc0D\xa0\x03\x0f@\x0c\x10\x91\x1a%$\x10\x86\x10h\x00\x08(\x88\x04\xa0\x08\xbc\x80$"\xc2\x90@B\x18$&'
 ```
-
 --> Here the flag was PHACK{q4Eo-eyMq-1dd0-leKx}
 
 ## win-fail
@@ -24,3 +24,24 @@ This script is quite simple too. The goal here is to give two addresses to angr 
 - One address to "avoid" (angr will know that when he hits this address it means it's a fail)
 - One address to "find" (angr will know that when he hits this address it means it's a win !)
 
+In this script, 0x400000 was added to the address because it's a PIE binary and angr will map PIE binaries with a base address of 0x400000. For non-PIE binaries, just put the address you find in you disassembler.
+
+You can check if the binary is a PIE (Position Independant Executable) by using `checksec` for example :
+
+```bash
+$ checksec ./binaries/phack-login
+[*] '/root/angr_templates/binaries/phack-login'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+```
+
+Example of execution : 
+```bash
+$ python3 win-fail.py 
+WARNING | 2021-07-07 13:34:26,732 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
+b'q4Eo-eyMq-1dd0-leKx\x06\x98\x8b\x16\x91$X"\x89J:\x08\x0c<\xa2C\x8b\x0f\xa0\x01\x10\x99\xa56\xcaa`H0(\x80F\x19\x0c\x08#\x05\x9a\x0c\x94`'
+```
+--> Here the flag was PHACK{q4Eo-eyMq-1dd0-leKx}
