@@ -59,4 +59,4 @@ WARNING | 2021-07-07 20:31:20,699 | cle.loader | The main binary is a position-i
 argv[1] = b'_starwars_vm_rocks_'
 stdin = b''
 ```
---> Here the flag was SHIELDS{_starwars_vm_rocks_}
+--> Here the flag was SHIELDS{\_starwars_vm\_rocks\_}
