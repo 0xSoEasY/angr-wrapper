@@ -45,3 +45,18 @@ WARNING | 2021-07-07 13:34:26,732 | cle.loader | The main binary is a position-i
 b'q4Eo-eyMq-1dd0-leKx\x06\x98\x8b\x16\x91$X"\x89J:\x08\x0c<\xa2C\x8b\x0f\xa0\x01\x10\x99\xa56\xcaa`H0(\x80F\x19\x0c\x08#\x05\x9a\x0c\x94`'
 ```
 --> Here the flag was PHACK{q4Eo-eyMq-1dd0-leKx}
+
+## claripy-argv
+
+This script is useful when you have to pass an arg to the program.
+
+To do this, we are using a claripy symbolic bitvector `claripy.BVS` called `arg` on 8 bits (1 byte) with a size of 0x20 in our example.
+This length depends of course of the binary you're working on but keep in mind that if you put a large length is must not be a problem because the bitvector will be padded wit `\x00` as we can see in this example of execution :
+
+```bash
+$ python3 claripy-argv.py 
+WARNING | 2021-07-07 20:31:20,699 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
+argv[1] = b'_starwars_vm_rocks_'
+stdin = b''
+```
+--> Here the flag was SHIELDS{_starwars_vm_rocks_}
