@@ -1,10 +1,9 @@
 # angr templates
 
-This repository contains some samples of very basic angr scripts made during CTF (this repository is sort of a reminder) and I think that every script here was used in a write-up posted on my (french) blog : [https://www.soeasy.re](https://www.soeasy.re)
+This folder contains the differents scripts included in angr-wrapper.
+I think that every script here was used in a write-up posted on my (french) blog : [https://www.soeasy.re](https://www.soeasy.re)
 
-I'm kind of a noob with angr so feel free to contribute :grin: !
-
-## string-output
+## string-output.py
 
 This script is the most basic one and will simply find the way to have the string "[+] ACCESS GRANTED" (for our example) in the output of the binary execution.
 
@@ -18,7 +17,7 @@ b'q4Eo-eyMq-1dd0-leKx\x0f`\x18"\x00IR\xc0D\xa0\x03\x0f@\x0c\x10\x91\x1a%$\x10\x8
 ```
 --> Here the flag was PHACK{q4Eo-eyMq-1dd0-leKx}
 
-## win-fail
+## win-fail.py
 
 This script is quite simple too. The goal here is to give two addresses to angr : 
 - One address to "avoid" (angr will know that when he hits this address it means it's a fail)
@@ -46,7 +45,7 @@ b'q4Eo-eyMq-1dd0-leKx\x06\x98\x8b\x16\x91$X"\x89J:\x08\x0c<\xa2C\x8b\x0f\xa0\x01
 ```
 --> Here the flag was PHACK{q4Eo-eyMq-1dd0-leKx}
 
-## claripy-argv
+## win-fail-argument.py
 
 This script is useful when you have to pass an arg to the program.
 
