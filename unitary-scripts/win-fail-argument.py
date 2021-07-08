@@ -4,7 +4,7 @@ import claripy
 WIN = 0x12C8 + 0x400000
 FAIL = 0x129F + 0x400000
 
-proj = angr.Project('./binaries/shields-claripy-argv')
+proj = angr.Project('../test-binaries/shields-claripy-argv')
 arg = claripy.BVS('arg', 8*0x20)
 
 state = proj.factory.entry_state(args=['./binaries/shields-claripy-argv', arg])
