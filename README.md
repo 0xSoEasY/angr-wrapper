@@ -51,7 +51,7 @@ b'q4Eo-eyMq-1dd0-leKx\x06\x98\x8b\x16\x91$X"\x89J:\x08\x0c<\xa2C\x8b\x0f\xa0\x01
 This script is useful when you have to pass an arg to the program.
 
 To do this, we are using a claripy symbolic bitvector `claripy.BVS` called `arg` on 8 bits (1 byte) with a size of 0x20 in our example.
-This length depends of course of the binary you're working on but keep in mind that if you put a large length is must not be a problem because the bitvector will be padded wit `\x00` as we can see in this example of execution :
+This length depends of course of the binary you're working on but keep in mind that if you put a large length is must not be a problem because the bitvector will be padded with `\x00` as we can see in this example of execution :
 
 ```bash
 $ python3 claripy-argv.py 
