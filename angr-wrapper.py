@@ -66,6 +66,10 @@ class AngrWrapper:
             exit(0)
 
     def process_string_output(self, string):
+        """
+        Find the path to have a specified string in the binary output
+        The input used is then printed
+        """
         simgr = self.project.factory.simgr()
         simgr.explore(find=lambda s: string.encode() in s.posix.dumps(1))
         inp = simgr.found[0].posix.dumps(0)
@@ -73,6 +77,10 @@ class AngrWrapper:
 
 
     def process_win_fail(self, win, fail):
+        """
+        Find the path to access a win address while avoiding a fail address
+        The input used is then printed
+        """
         if self.is_PIE:
             win += 0x400000
             fail += 0x400000
@@ -82,7 +90,12 @@ class AngrWrapper:
         inp = simgr.found[0].posix.dumps(0)
         print(f"\n[+] Input to find {hex(win)} while avoiding {hex(fail)} : {inp}")
     
+
     def process_win_fail_argv(self, win, fail, bits, length):
+        """
+        Find the path to access a win address while avoiding a fail address with a bitvector as command-line argument
+        The argument used is then printed with an optionnal stdin input used
+        """
         if self.is_PIE:
             win += 0x400000
             fail += 0x400000
