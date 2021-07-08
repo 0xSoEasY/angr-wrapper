@@ -10,6 +10,9 @@ from argparse import ArgumentDefaultsHelpFormatter, ArgumentParser
 class AngrWrapper:
 
     def __init__(self, file_path):
+        """
+        Initialisation of the class : create attributes and getting some informations on the binary
+        """
         self.file_path = file_path
         file_info = check_output(['file', file_path])
         
@@ -22,6 +25,9 @@ class AngrWrapper:
 
         
     def menu(self):
+        """
+        Display the main menu of the script
+        """
         choice = 0
         while choice not in [1, 2, 3, 4]:
             print("\n[1]  Look for a string in output")
