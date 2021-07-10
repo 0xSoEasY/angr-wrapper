@@ -13,6 +13,7 @@ class AngrWrapper:
         """
         Initialisation of the class : create attributes and getting some informations on the binary
         """
+        self.print_banner()
         self.file_path = file_path
         file_info = check_output(['file', file_path])
         
@@ -22,6 +23,19 @@ class AngrWrapper:
         print(f"[+] Position Independant Executable (PIE) : {self.is_PIE}")
 
         self.project = Project(file_path)
+
+    
+    def print_banner(self):
+        banner = """
+         █████╗ ███╗   ██╗ ██████╗ ██████╗       ██╗    ██╗██████╗  █████╗ ██████╗ ██████╗ ███████╗██████╗ 
+██╔══██╗████╗  ██║██╔════╝ ██╔══██╗      ██║    ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗
+███████║██╔██╗ ██║██║  ███╗██████╔╝█████╗██║ █╗ ██║██████╔╝███████║██████╔╝██████╔╝█████╗  ██████╔╝
+██╔══██║██║╚██╗██║██║   ██║██╔══██╗╚════╝██║███╗██║██╔══██╗██╔══██║██╔═══╝ ██╔═══╝ ██╔══╝  ██╔══██╗
+██║  ██║██║ ╚████║╚██████╔╝██║  ██║      ╚███╔███╔╝██║  ██║██║  ██║██║     ██║     ███████╗██║  ██║
+╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝       ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚══════╝╚═╝  ╚═╝
+############################ https://github.com/0xSoEasY/angr-wrapper #############################
+        """        
+        print(banner)
 
         
     def menu(self):
@@ -78,7 +92,7 @@ class AngrWrapper:
         """
         simgr = self.project.factory.simgr()
         simgr.explore(find=lambda s: string.encode() in s.posix.dumps(1))
-        inp = simgr.found[0].posix.dumps(0)
+        inp = simgr.found[0].posix.dumps(0).split(b'\x00')[0]
         print(f"\n[+] Input to have '{string}' in output : {inp}")
 
 
@@ -93,7 +107,7 @@ class AngrWrapper:
 
         simgr = self.project.factory.simulation_manager(self.project.factory.full_init_state())
         simgr.explore(find=win, avoid=fail)
-        inp = simgr.found[0].posix.dumps(0)
+        inp = simgr.found[0].posix.dumps(0).split(b'\x00')[0]
         print(f"\n[+] Input to find {hex(win)} while avoiding {hex(fail)} : {inp}")
     
 
@@ -116,8 +130,9 @@ class AngrWrapper:
         if len(simgr.found) > 0:
             s = simgr.found[0]
             argv_1 = s.solver.eval(arg, cast_to=bytes).split(b'\x00')[0]
+            stdin = s.posix.dumps(0).split(b'\x00')[0]
             print(f"\t- argv[1] = {argv_1}")
-            print(f"\t- stdin = {s.posix.dumps(0)}")
+            print(f"\t- stdin = {stdin}")
 
 
 ################################## ARGUMENTS ##################################
