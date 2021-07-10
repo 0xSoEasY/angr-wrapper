@@ -1,6 +1,7 @@
 import angr
 import claripy
 
+# Adding 0x400000 because angr map PIE binaries with a base address of 0x400000
 WIN = 0x12C8 + 0x400000
 FAIL = 0x129F + 0x400000
 
