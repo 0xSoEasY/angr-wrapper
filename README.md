@@ -12,7 +12,7 @@ Simply make the script executable to launch it like a binary or use python3 to l
 $ git clone https://github.com/0xSoEasY/angr-wrapper
 $ cd angr-wrapper
 $ chmod +x angr-wrapper.py
-$ ./angr-wrapper.py 
+$ ./angr-wrapper.py # or python3 ./angr-wrapper.py
 
 usage: angr-wrapper.py [-h] [-f FILE]
 
