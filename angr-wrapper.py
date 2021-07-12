@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/usr/bin/env python3
 from angr import Project
 from claripy import BVS
 from subprocess import check_output
