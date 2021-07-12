@@ -4,7 +4,6 @@ from claripy import BVS
 from subprocess import check_output
 from argparse import ArgumentDefaultsHelpFormatter, ArgumentParser
 
-
 ################################## CLASS DEFINITION ##################################
 
 class AngrWrapper:
@@ -85,6 +84,7 @@ class AngrWrapper:
         elif choice == 4:
             exit(0)
 
+            
     def process_string_output(self, string):
         """
         Find the path to have a specified string in the binary output
@@ -134,7 +134,6 @@ class AngrWrapper:
             print(f"\t- argv[1] = {argv_1}")
             print(f"\t- stdin = {stdin}")
 
-
 ################################## ARGUMENTS ##################################
 
 parser = ArgumentParser(description="angr-wrapper is a little script to accelerate your fast angr process during CTF",
@@ -144,14 +143,12 @@ parser.add_argument('-f',
                     help="The path to the binary you're working on")
 args = parser.parse_args()
 
-
 ################################## MAIN METHOD ##################################
 
 def main():
     if args.file:
         wrapper = AngrWrapper(args.file)
         wrapper.menu()
-
     else:
         print()
         parser.print_help()
