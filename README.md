@@ -9,6 +9,9 @@ You can test the python3 `angr-wrapper` and every script in `standalone-scripts`
 Simply make the script executable to launch it like a binary or use python3 to launch it. Specify the path to your binary via the `-f` parameter. This is told by the help message of the script.
 
 ```bash
+$ git clone https://github.com/0xSoEasY/angr-wrapper
+$ cd angr-wrapper
+$ chmod +x angr-wrapper.py
 $ ./angr-wrapper.py 
 
 usage: angr-wrapper.py [-h] [-f FILE]
