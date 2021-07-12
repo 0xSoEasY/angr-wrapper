@@ -7,5 +7,5 @@ fail_adress = 0x10E3 + 0x400000
 p = angr.Project('../test-binaries/phack-login')
 simgr = p.factory.simulation_manager(p.factory.full_init_state())
 simgr.explore(find=win_adress, avoid=fail_adress)
-print(simgr.found[0].posix.dumps(0))
+print(simgr.found[0].posix.dumps(0).split(b'\x00')[0])
 
