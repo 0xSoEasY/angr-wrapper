@@ -15,5 +15,6 @@ simgr.explore(find=WIN, avoid=FAIL)
 if len(simgr.found) > 0:
     s = simgr.found[0]
     argv_1 = s.solver.eval(arg, cast_to=bytes).split(b'\x00')[0]
+    stdin = s.posix.dumps(0).split(b'\x00')[0]
     print(f"argv[1] = {argv_1}")
-    print(f"stdin = {s.posix.dumps(0)}")
+    print(f"stdin = {stdin}")
