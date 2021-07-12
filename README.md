@@ -39,6 +39,7 @@ $ ./angr-wrapper.py -f test-binaries/phack-login
 ██║  ██║██║ ╚████║╚██████╔╝██║  ██║      ╚███╔███╔╝██║  ██║██║  ██║██║     ██║     ███████╗██║  ██║
 ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝       ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚══════╝╚═╝  ╚═╝
 ############################ https://github.com/0xSoEasY/angr-wrapper #############################
+
 [+] Position Independant Executable (PIE) : True
 WARNING | 2021-07-10 12:01:07,745 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
 
@@ -65,6 +66,7 @@ $ ./angr-wrapper.py -f test-binaries/shields-claripy-argv
 ██║  ██║██║ ╚████║╚██████╔╝██║  ██║      ╚███╔███╔╝██║  ██║██║  ██║██║     ██║     ███████╗██║  ██║
 ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝       ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝     ╚══════╝╚═╝  ╚═╝
 ############################ https://github.com/0xSoEasY/angr-wrapper #############################
+
 [+] Position Independant Executable (PIE) : True
 WARNING | 2021-07-10 12:13:20,836 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
 
