@@ -1,12 +1,14 @@
 # angr wrapper
 
-angr-wrapper is a simple script to accelerate rapid uses of angr, for example during CTFs. It contains pre-defined angr scripts useful in differents situations, which are available in "standalone" versions in the `standalone-scripts` repository.
+angr-wrapper is a simple script to accelerate rapid uses of angr, for example during CTFs. It contains pre-defined angr scripts useful in differents situations, which are available in "standalone" versions in the [standalone-scripts](standalone-scripts) folder.
 
-You can test the python3 `angr-wrapper` and every script in `standalone-scripts` folder (note that a little exmplication of those differents scripts is in `standalone-scripts/README.md`) on binaries contained in the `test-binaries` folder.
+You can test the python3 [angr-wrapper.py](angr-wrapper.py) script and every one in [standalone-scripts](standalone-scripts) folder (note that a little explanation of those differents scripts is in [standalone-scripts/README.md](standalone-scripts/README.md)) on binaries contained in the [test-binaries](test-binaries) folder.
 
 ## How to use ?
 
-Simply make the script executable to launch it like a binary or use python3 to launch it. Specify the path to your binary via the `-f` parameter. This is told by the help message of the script.
+Simply make the script executable to launch it like a binary or use python3 to launch it.
+
+Specify the path to your binary via the `-f` parameter.
 
 ```bash
 $ git clone https://github.com/0xSoEasY/angr-wrapper
