@@ -13,7 +13,7 @@ Example of execution :
 ```bash
 $ python3 string-output.py
 WARNING | 2021-07-07 13:38:55,158 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
-b'q4Eo-eyMq-1dd0-leKx\x0f`\x18"\x00IR\xc0D\xa0\x03\x0f@\x0c\x10\x91\x1a%$\x10\x86\x10h\x00\x08(\x88\x04\xa0\x08\xbc\x80$"\xc2\x90@B\x18$&'
+b'q4Eo-eyMq-1dd0-leKx\x0f`\x18"'
 ```
 --> Here the flag was PHACK{q4Eo-eyMq-1dd0-leKx}
 
