@@ -55,7 +55,7 @@ To do this, we are using a claripy symbolic bitvector `claripy.BVS` called `arg`
 This length depends of course of the binary you're working on but keep in mind that if you put a large length is must not be a problem because the bitvector will be padded with `\x00` as we can see in this example of execution :
 
 ```bash
-$ python3 claripy-argv.py 
+$ python3 win-fail-argument.py
 WARNING | 2021-07-07 20:31:20,699 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
 argv[1] = b'_starwars_vm_rocks_'
 stdin = b''
