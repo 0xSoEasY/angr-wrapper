@@ -85,6 +85,9 @@ Your choice : 3
 	- argv[1] = b'_starwars_vm_rocks_'
 	- stdin = b''
 ```
+## TODO
+
+- Add a flag format constraint (ex: starts with "CTF{")
 
 ## Contribution
 
